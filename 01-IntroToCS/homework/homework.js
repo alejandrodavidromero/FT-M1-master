@@ -1,6 +1,6 @@
 'use strict';
 
-const { arrayReplaceAt } = require("markdown-it/lib/common/utils");
+//const { arrayReplaceAt } = require("markdown-it/lib/common/utils");
 
 function BinarioADecimal(num) {
   num = num.split("").reverse;
@@ -17,6 +17,7 @@ function DecimalABinario(num) {
   }
   return result.reverse().join("");
 }
+
 
 
 module.exports = {
