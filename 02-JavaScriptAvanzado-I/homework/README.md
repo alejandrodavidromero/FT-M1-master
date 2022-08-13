@@ -12,12 +12,12 @@ x = 1;
 var a = 5;
 var b = 10;
 var c = function(a, b, c) {
-  var x = 10;
+  var x = 10; //imprime 1ro 10
   console.log(x);
-  console.log(a);
+  console.log(a); // imprime 2dp undefinded
   var f = function(a, b, c) {
     b = a;
-    console.log(b);
+    console.log(b); //imprime 3ro 
     b = c;
     var x = 5;
   }
@@ -25,13 +25,13 @@ var c = function(a, b, c) {
   console.log(b);
 }
 c(8,9,10);
-console.log(b);
-console.log(x);
+console.log(b); // imprime 8
+console.log(x); //imprime 5
 ```
 
 ```javascript
-console.log(bar);
-console.log(baz);
+console.log(bar); //imprime 1ro Hola
+console.log(baz); //undefined
 foo();
 function foo() { console.log('Hola!'); }
 var bar = 1;
@@ -41,56 +41,56 @@ baz = 2;
 ```javascript
 var instructor = "Tony";
 if(true) {
-    var instructor = "Franco";
+    var instructor = "Franco"; // imprime Franco
 }
 console.log(instructor);
 ```
 
 ```javascript
-var instructor = "Tony";
+var instructor = "Tony"; //imprime 1ro
 console.log(instructor);
 (function() {
    if(true) {
-      var instructor = "Franco";
+      var instructor = "Franco"; // imprime 2do
       console.log(instructor);
    }
 })();
-console.log(instructor);
+console.log(instructor); // imprime 3ro
 ```
 
 ```javascript
 var instructor = "Tony";
 let pm = "Franco";
 if (true) {
-    var instructor = "The Flash";
+    var instructor = "The Flash"; 
     let pm = "Reverse Flash";
-    console.log(instructor);
-    console.log(pm);
+    console.log(instructor); //imprime1ro
+    console.log(pm); //imprime2do
 }
-console.log(instructor);
-console.log(pm);
+console.log(instructor);// imprime 3ro the flash
+console.log(pm);//imprime franco por que let se usa una sola vez.
 ```
 ### Coerción de Datos
 
 ¿Cuál crees que será el resultado de la ejecución de estas operaciones?:
 
 ```javascript
-6 / "3"
-"2" * "3"
-4 + 5 + "px"
-"$" + 4 + 5
-"4" - 2
-"4px" - 2
-7 / 0
-{}[0]
-parseInt("09")
-5 && 2
-2 && 5
-5 || 0
-0 || 5
-[3]+[3]-[10]
-3>2>1
-[] == ![]
+6 / "3" //2
+"2" * "3" //6
+4 + 5 + "px" //9px
+"$" + 4 + 5 //$45
+"4" - 2 //2
+"4px" - 2 // NaN
+7 / 0 //infinito
+{}[0] //array[0]
+parseInt("09") //9
+5 && 2 //2
+2 && 5 //5
+5 || 0 //5
+0 || 5 //5
+[3]+[3]-[10] //23
+3>2>1 //(3>2 seria como 1) entonces da falso
+[] == ![] //true
 ```
 
 > Si te quedó alguna duda repasá con [este artículo](http://javascript.info/tutorial/object-conversion).
@@ -102,8 +102,8 @@ parseInt("09")
 
 ```javascript
 function test() {
-   console.log(a);
-   console.log(foo());
+   console.log(a); // undefinded
+   console.log(foo()); //imprime 2
 
    var a = 1;
    function foo() {
@@ -129,7 +129,7 @@ function getFood(food) {
 
 getFood(false);
 ```
-
+// variables diferentes con el mismo nombre
 
 ### This
 
@@ -153,18 +153,18 @@ var test = obj.prop.getFullname;
 
 console.log(test());
 ```
-
+//
 ### Event loop
 
 Considerando el siguiente código, ¿Cuál sería el orden en el que se muestra por consola? ¿Por qué?
 
 ```javascript
 function printing() {
-   console.log(1);
-   setTimeout(function() { console.log(2); }, 1000);
-   setTimeout(function() { console.log(3); }, 0);
-   console.log(4);
+   console.log(1); //imprime 1ro
+   setTimeout(function() { console.log(2); }, 1000);//imprime 5to despues de un seg
+   setTimeout(function() { console.log(3); }, 0); //imprime 4to
+   console.log(4);//imprime 2o
 }
 
-printing();
+printing(); //imprime 3ro indefinded
 ```
