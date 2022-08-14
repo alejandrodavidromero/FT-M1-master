@@ -47,8 +47,28 @@ Pueden utilizar class o función constructora.
 */
 
 function Queue() {
+  constructor(); {
+    this.contenido = [];
+    this.enqueue = enqueue;
+    this.dequeue = dequeue;
+    this.size = size;
+    this.length = 0;
 
+  }
+
+  function enqueue(contenido) {
+    this.contenido.push(contenido);
+  }
+
+  function dequeue() {
+    return this.contenido.shift();
+  }
+  function size() {
+    return this.contenido.length;
+  }
 }
+
+
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------
